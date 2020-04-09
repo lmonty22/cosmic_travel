@@ -1,0 +1,20 @@
+<h1><%= @scientist.name%> Detail Page </h1>
+<h2>Field of Study: <%= @scientist.field_of_study%></h2>
+
+<h3>Missions</h3>
+<ul>
+    <% @scientist.missions.each do |m| %>
+    <li> <%= m.name %> </li>
+    <%end %>
+</ul >
+
+<h3>Planets They have Visited</h3>
+<ul>
+    <% @scientist.planets.each do |p| %>
+    <li> <%= p.name %> </li>
+    <%end %>
+</ul >
+
+<div><%= link_to 'Edit this Scientist', edit_scientist_path(@scientist) %> </div>
+<div><%=link_to 'Add a Mission', new_mission_path%></div>
+<div><%=link_to 'Delete This Scientist', scientist_path(@scientist), method: :delete %></div>

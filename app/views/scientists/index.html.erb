@@ -1,0 +1,9 @@
+<h1>All the Scientists! </h1>
+<% @scientists.each do |s| %>
+<div><%=link_to s.name, scientist_path(s) %></div>
+<% end %>
+
+<br>
+<br>
+<div><%=link_to 'Add a Scientist', new_scientist_path %></div>
+<div><%=link_to 'Add a Mission', new_mission_path%></div>
