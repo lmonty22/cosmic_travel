@@ -1,18 +1,14 @@
 <h1>New Mission Form</h1>
 
-<% if @mission.errors.full_messages.each do |message| %>
-     <li><%= message %></li>
-        <%end %>
-    <%end %>
-</ul>
+<%= render partial: "shared/error_list", locals: {new_object: @mission}%>
 
 <%= form_for @mission do |m| %>
 <%= m.label :name %>
 <%= m.text_field :name%>
 <%= m.label :scientist_id%>
-<%= m.collection_select(:scientist_id, Scientist.all, :id, :name) %>
+<%= m.collection_select(:scientist_id, Scientist.all, :id, :name, include_blank: true) %>
 <%= m.label :planet_id%>
-<%= m.collection_select(:planet_id, Planet.all, :id, :name)%>
+<%= m.collection_select(:planet_id, Planet.all, :id, :name, include_blank: true)%>
 <br>
 <%= m.submit%>
 <%end %>

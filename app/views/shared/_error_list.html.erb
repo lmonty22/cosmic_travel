@@ -1,0 +1,7 @@
+</ul>
+<% if new_object.errors
+        new_object.errors.full_messages.each do |message| %>
+     <li><%= message %></li>
+        <%end %>
+    <%end %>
+</ul>

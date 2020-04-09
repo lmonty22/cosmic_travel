@@ -1,16 +1,6 @@
 <h1>Edit Scientist Form</h1>
-<ul>
-<% if @scientist.errors.full_messages.each do |message| %>
-     <li><%= message %></li>
-        <%end %>
-    <%end %>
-</ul>
 
-<%= form_for @scientist do |s| %>
-<%= s.label :name %>
-<%= s.text_field :name %>
-<%= s.label :field_of_study %>
-<%= s.text_field :field_of_study%>
-<br>
-<%= s.submit %>
-<%end%>
+<%= render partial: "shared/error_list", locals: {new_object: @scientist}%>
+
+<%= render partial: "form_scientists", locals: {submit_text: "Update Scientist"} %>
+
